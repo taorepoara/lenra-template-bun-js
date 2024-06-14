@@ -10,9 +10,11 @@ export default class BunServer extends App {
         serve({
             port,
             async fetch(req) {
+                console.log(req);
                 try {
                     if (req.method === "POST") {
                         const payload = await req.json();
+                        console.log(payload);
                         const result = await app.handler.handleRequest(payload);
                         if (result instanceof File) {
                             return new Response(file(result.path));
