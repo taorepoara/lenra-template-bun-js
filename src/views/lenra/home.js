@@ -5,11 +5,6 @@ export default function (_data, _props) {
     return Flex([
         View("lenra.counter")
             .find(Counter, {
-                user: "@me"
-            })
-            .props({ text: "My personnal counter" }),
-        View("lenra.counter")
-            .find(Counter, {
                 user: "global"
             })
             .props({ text: "The common counter" }),
